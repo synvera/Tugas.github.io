@@ -1,2 +1,2 @@
-# Tugas
-On Progress
+Baru bwejalan 
+> 20%
