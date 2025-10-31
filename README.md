@@ -1,2 +1,2 @@
-Baru bwejalan 
+Baru berjalan 
 > 20%
