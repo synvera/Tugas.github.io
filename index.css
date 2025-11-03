@@ -182,57 +182,35 @@ section .section1 .list1 a {
 
 
 .brand1 {
-    margin: 230px 180px 25px 210px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1px;
-    border-bottom: 1px solid black;
-    flex-wrap: wrap;
+  width: 100%;
+  background: #f9f9f9;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.brand1 img {
-    margin: 0 10px 10px 50px;
+.brand1 .brand-track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
 }
 
-.brand1 .ad0 {
-    width: 80px;
-    height: 100%;
+.brand1 .brand-track img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }
 
-.brand1 .ad1 {
-    width: 150px;
-    height: 100%;
-}
-
-.brand1 .ad2 {
-    width: 80px;
-    height: 100%;
-}
-
-.brand1 .ad3 {
-    width: 150px;
-    height: 100%;
-}
-
-.brand1 .ad4 {
-    width: 140px;
-    height: 100%;
-}
-
-.brand1 .ad5 {
-    width: 150px;
-    height: 100%;
-}
-
-.brand1 .ad6 {
-    width: 150px;
-    height: 100%;
-}
-
-.brand1 .ad7 {
-    width: 100px;
-    height: 100%;
+.brand1 .brand-track img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .hero {
@@ -433,7 +411,6 @@ section .section1 .list1 a {
 }
 
 footer{
-    border-top: 1px solid #333;
     font-family: "Poppins", sans-serif;
 }
 
@@ -575,485 +552,477 @@ footer{
     width:25px;
 }
 
+/* ========== DASAR ========== */
+/* (Biarkan CSS utama kamu tetap seperti semula di atas) */
+
+
+/* ========== 1. LAPTOP & DESKTOP KECIL (≤1200px) ========== */
+@media (max-width: 1200px) {
+  nav .logo img {
+    margin-left: 100px;
+    width: 130px;
+  }
+
+  nav .selengkapnya {
+    margin-right: 100px;
+  }
+
+  section .section1 {
+    margin: 15px 100px;
+  }
+
+  .brand1 {
+    margin: 250px 100px 25px;
+  }
+
+  .hero {
+    margin: 50px 100px;
+  }
+
+  .trend h4 {
+    margin: 25px 100px;
+  }
+
+  .rata {
+    margin: 50px 100px;
+  }
+
+  .rata  .ke1 h1, .ke2 h1, .ke3 h1, .ke4 h1{
+    font-size: 18px;
+  }
+
+  .rata .ke1 p, .ke2 p, .ke3 p, .ke4 p{
+    font-size: 15px;
+  }
+
+  .icon{
+    width: 150px;
+  }
+
+  .icon img{
+    width: 30px;
+  }
+}
+
+
+@media (max-width: 992px) {
+  nav {
+    padding: 8px 40px;
+  }
+
+  /* Sembunyikan menu list */
+  nav .list {
+    display: none;
+  }
+
+  /* Tambahkan ikon hamburger */
+  nav::after {
+    content: "☰";
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    top: 14px;
+  }
+
+  /* Ketika nav aktif */
+  nav.active .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0C2B4E;
+    position: fixed;
+    top: 55px; /* tinggi navbar */
+    left: 0;
+    width: 100%;
+    gap: 15px;
+    padding: 15px 0;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  body {
+    padding-top: 60px;
+  }
+}
+
+/* ====== 3. TABLET PORTRAIT (≤768px) ====== */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 10px;
-        padding: 0 10px;
-    }
+  nav {
+    padding: 8px 30px;
+  }
 
-    nav {
-        height: auto;
-        flex-wrap: wrap;
-        padding: 10px 20px;
-    }
+  nav::after {
+    right: 30px;
+    font-size: 22px;
+  }
 
-    nav .logo img {
-        margin-left: 0;
-        width: 120px;
-    }
+  nav .logo img {
+    width: 100px;
+  }
 
-    nav .list {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
+  nav.active .list {
+    top: 52px;
+  }
 
-    nav .list li a {
-        font-size: 14px;
-    }
+  body {
+    padding-top: 58px;
+  }
 
-    nav .selengkapnya {
-        margin-right: 0;
-        gap: 15px;
-    }
-
-    nav .selengkapnya h1 {
-        font-size: 16px;
-    }
-
-    nav .selengkapnya button {
-        width: 80px;
-        height: 35px;
-        font-size: 13px;
-    }
-
-    nav .selengkapnya img {
-        width: 30px;
-    }
-
-    section .section1 {
-        margin: 20px 30px;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    section .section1 .list1 {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    section .section1 .list1 a {
-        font-size: 13px;
-    }
-
-    .search-box {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    .brand1 {
-        margin: 20px 30px;
-        justify-content: center;
-    }
-
-    .brand1 img {
-        margin: 5px 15px;
-    }
-
-    .hero {
-        margin: 30px 30px 50px;
-    }
-
-    .hero h1 {
-        font-size: 35px;
-    }
-
-    .hero span {
-        font-size: 45px;
-    }
-
-    .carousel-container {
-        width: 95%;
-    }
-
-    .item {
-        min-width: 150px;
-    }
-
-    .item img {
-        width: 140px;
-        height: 100px;
-    }
-
-    .carousel-container button {
-        font-size: 20px;
-        padding: 6px 10px;
-    }
+  /* ==== BRAND SLIDER UTAMA ==== */
+.brand1 {
+  width: 100%;
+  background: #f9f9f9;
+  overflow: hidden;
+  padding: 30px 0;
+  position: relative;
 }
 
-/* Mobile Large - 550px */
+.brand1 .brand-track {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  animation: slide 10s linear infinite;
+}
+
+.brand1 .brand-track img {
+  height: auto;
+  width: 50px;
+  display: flex;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.brand1 .brand-track img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ==== ANIMASI LOOP ==== */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==== RESPONSIVE UNTUK 768PX KE BAWAH ==== */
+@media (max-width: 768px) {
+  .brand1 {
+    padding: 20px 0;
+  }
+
+  .brand1 .brand-track {
+    gap: 40px; /* jarak antar logo lebih rapat */
+    animation: slide 30s linear infinite; /* bisa diperlambat sedikit */
+  }
+
+  .brand1 .brand-track img {
+    height: 40px; /* logo lebih kecil */
+    opacity: 0.9;
+  }
+}
+
+
+  .footer{
+    border-top: 1px solid white;
+  }
+
+  .rata{
+    margin: 0 0 0 50px;
+    display: block;
+    text-align: left;
+  }
+
+  .rata  .ke1 h1, .ke2 h1, .ke3 h1, .ke4 h1{
+    margin-top: 25px;
+  }
+}
+
+/* ====== 4. MOBILE BESAR (≤550px) ====== */
 @media (max-width: 550px) {
-    header h1 {
-        font-size: 9px;
-    }
+  nav {
+    padding: 6px 20px;
+  }
 
-    nav {
-        padding: 10px 15px;
-    }
+  nav::after {
+    right: 20px;
+    font-size: 22px;
+  }
 
-    nav .logo img {
-        width: 100px;
-    }
+  nav .logo img {
+    width: 90px;
+  }
 
-    nav .list {
-        gap: 10px;
-    }
+  nav.active .list {
+    top: 50px;
+    gap: 12px;
+    padding: 12px 0;
+  }
 
-    nav .list li a {
-        font-size: 12px;
-    }
+  .section1 .list1 li{ 
+    margin-left: -500px;
+    position: absolute;
+  }
 
-    nav .selengkapnya {
-        gap: 10px;
-    }
+  .selengkapnya{
+    margin-left: 100px;
+  }
 
-    nav .selengkapnya h1 {
-        font-size: 14px;
-    }
+  body {
+    max-width: 550px;
+    padding-top: 55px;
+  }
 
-    nav .selengkapnya button {
-        width: 70px;
-        height: 30px;
-        font-size: 11px;
-    }
+  .carousel-container{
+    margin-left: 100px;
+  }
 
-    nav .selengkapnya img {
-        width: 25px;
-    }
+  .trend .slider-container{
+    margin-left: 100px;
+  }
 
-    section .section1 {
-        margin: 15px 20px;
-    }
+  footer .rata{
+    margin-left: 100px;
+  }
 
-    section .section1 .list1 {
-        gap: 10px;
-    }
-
-    section .section1 .list1 a {
-        font-size: 11px;
-    }
-
-    .search-box {
-        max-width: 280px;
-        height: 28px;
-    }
-
-    .search-box input {
-        font-size: 12px;
-    }
+  .powered{
+    margin-left: 80px;
+  }
 
     .brand1 {
-        margin: 15px 20px;
+    width: 100%;
+    background: #f9f9f9;
+    overflow: hidden;
+    padding: 30px 0;
+    position: relative;
     }
 
-    .brand1 img {
-        margin: 5px 10px;
+    .brand1 .brand-track {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    animation: slide 10s linear infinite;
     }
 
-    .brand1 .ad0, .brand1 .ad2 {
-        width: 60px;
+    .brand1 .brand-track img {
+    height: auto;
+    width: 50px;
+    display: flex;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
     }
 
-    .brand1 .ad1, .brand1 .ad3, .brand1 .ad5, .brand1 .ad6 {
-        width: 100px;
+    .brand1 .brand-track img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
     }
 
-    .brand1 .ad4, .brand1 .ad7 {
-        width: 90px;
+    /* ==== ANIMASI LOOP ==== */
+    @keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
     }
 
-    .hero {
-        margin: 25px 20px 40px;
+    /* ==== RESPONSIVE UNTUK 768PX KE BAWAH ==== */
+    @media (max-width: 550px) {
+    .brand1 {
+        padding: 20px 0;
     }
 
-    .hero h1 {
-        font-size: 25px;
+    .brand1 .brand-track {
+        gap: 40px; /* jarak antar logo lebih rapat */
+        animation: slide 30s linear infinite; /* bisa diperlambat sedikit */
     }
 
-    .hero span {
-        font-size: 32px;
+    .brand1 .brand-track img {
+        height: 40px; /* logo lebih kecil */
+        opacity: 0.9;
+    }
     }
 
-    .item {
-        min-width: 120px;
-    }
 
-    .item img {
-        width: 110px;
-        height: 80px;
-    }
-
-    .item p {
-        font-size: 11px;
-    }
-
-    .carousel-container button {
-        font-size: 18px;
-        padding: 5px 8px;
-    }
 }
 
-/* Mobile Medium - 400px */
+/* ====== 5. MOBILE SEDANG (≤400px) ====== */
 @media (max-width: 400px) {
-    header h1 {
-        font-size: 8px;
-    }
+  nav {
+    padding: 6px 15px;
+  }
 
-    nav {
-        padding: 8px 10px;
-    }
+  nav::after {
+    right: 15px;
+    font-size: 20px;
+  }
 
-    nav .logo img {
-        width: 90px;
-    }
+  nav .logo img {
+    margin-left: 58px;
+    width: 80px;
+  }
 
-    nav .list {
-        gap: 8px;
-    }
+  nav.active .list {
+    top: 48px;
+  }
 
-    nav .list li a {
-        font-size: 10px;
-    }
+  .selengkapnya{
+    margin-left: 50px;
+  }
 
-    nav .selengkapnya {
-        gap: 8px;
-    }
+  body {
+    padding-top: 50px;
+  }
 
-    nav .selengkapnya h1 {
-        font-size: 12px;
-    }
-
-    nav .selengkapnya button {
-        width: 60px;
-        height: 28px;
-        font-size: 10px;
-    }
-
-    nav .selengkapnya img {
-        width: 22px;
-    }
-
-    section .section1 {
-        margin: 12px 15px;
-    }
-
-    section .section1 .list1 {
-        gap: 8px;
-    }
-
-    section .section1 .list1 a {
-        font-size: 10px;
-    }
-
-    .search-box {
-        max-width: 250px;
-        height: 26px;
-        padding: 3px 12px;
-    }
-
-    .search-box input {
-        font-size: 11px;
-    }
-
-    .search-box button i {
-        font-size: 14px;
-    }
-
-    .brand1 {
-        margin: 12px 15px;
-    }
-
-    .brand1 img {
-        margin: 3px 8px;
-    }
-
-    .brand1 .ad0, .brand1 .ad2 {
-        width: 50px;
-    }
-
-    .brand1 .ad1, .brand1 .ad3, .brand1 .ad5, .brand1 .ad6 {
-        width: 85px;
-    }
-
-    .brand1 .ad4, .brand1 .ad7 {
-        width: 75px;
-    }
-
-    .hero {
-        margin: 20px 15px 35px;
-    }
-
-    .hero h1 {
-        font-size: 20px;
-    }
-
-    .hero span {
-        font-size: 26px;
-    }
-
-    .carousel-container {
-        width: 100%;
-        margin: 30px auto;
-    }
-
-    .item {
-        min-width: 100px;
-    }
-
-    .item img {
-        width: 95px;
-        height: 70px;
-    }
-
-    .item p {
-        font-size: 10px;
-    }
-
-    .carousel-container button {
-        font-size: 16px;
-        padding: 4px 7px;
-    }
-
-    .prev {
-        left: 5px;
-    }
-
-    .next {
-        right: 5px;
-    }
+  /* ==== BRAND SLIDER UTAMA ==== */
+.brand1 {
+  width: 100%;
+  background: #f9f9f9;
+  overflow: hidden;
+  padding: 30px 0;
+  position: relative;
 }
 
-/* Mobile Small - 350px */
+.brand1 .brand-track {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  animation: slide 10s linear infinite;
+}
+
+.brand1 .brand-track img {
+  height: auto;
+  width: 50px;
+  display: flex;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.brand1 .brand-track img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ==== ANIMASI LOOP ==== */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==== RESPONSIVE UNTUK 768PX KE BAWAH ==== */
+@media (max-width: 400px) {
+  .brand1 {
+    padding: 20px 0;
+  }
+
+  .brand1 .brand-track {
+    gap: 40px; /* jarak antar logo lebih rapat */
+    animation: slide 30s linear infinite; /* bisa diperlambat sedikit */
+  }
+
+  .brand1 .brand-track img {
+    height: 40px; /* logo lebih kecil */
+    opacity: 0.9;
+  }
+}
+
+
+}
+
+/* ====== 6. MOBILE KECIL (≤350px) ====== */
 @media (max-width: 350px) {
-    header h1 {
-        font-size: 7px;
-        padding: 5px;
-    }
+  nav {
+    padding: 5px 12px;
+  }
 
-    nav {
-        padding: 8px 8px;
-    }
+  nav::after {
+    right: 12px;
+  }
 
-    nav .logo img {
-        width: 80px;
-    }
+  nav .logo img {
+    width: 70px;
+  }
 
-    nav .list {
-        gap: 6px;
-    }
+  body {
+    padding-top: 48px;
+  }
 
-    nav .list li a {
-        font-size: 9px;
-    }
+  /* ==== BRAND SLIDER UTAMA ==== */
+.brand1 {
+  width: 100%;
+  background: #f9f9f9;
+  overflow: hidden;
+  padding: 30px 0;
+  position: relative;
+}
 
-    nav .selengkapnya {
-        gap: 6px;
-    }
+.brand1 .brand-track {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  animation: slide 10s linear infinite;
+}
 
-    nav .selengkapnya h1 {
-        font-size: 11px;
-    }
+.brand1 .brand-track img {
+  height: auto;
+  width: 50px;
+  display: flex;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
 
-    nav .selengkapnya button {
-        width: 55px;
-        height: 26px;
-        font-size: 9px;
-    }
+.brand1 .brand-track img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
 
-    nav .selengkapnya img {
-        width: 20px;
-    }
+/* ==== ANIMASI LOOP ==== */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
-    section .section1 {
-        margin: 10px 10px;
-    }
+/* ==== RESPONSIVE UNTUK 768PX KE BAWAH ==== */
+@media (max-width: 350px) {
+  .brand1 {
+    padding: 20px 0;
+  }
 
-    section .section1 .list1 {
-        gap: 6px;
-    }
+  .brand1 .brand-track {
+    gap: 40px; /* jarak antar logo lebih rapat */
+    animation: slide 30s linear infinite; /* bisa diperlambat sedikit */
+  }
 
-    section .section1 .list1 a {
-        font-size: 9px;
-    }
+  .brand1 .brand-track img {
+    height: 40px; /* logo lebih kecil */
+    opacity: 0.9;
+  }
+}
 
-    .search-box {
-        max-width: 220px;
-        height: 24px;
-        padding: 3px 10px;
-    }
 
-    .search-box input {
-        font-size: 10px;
-    }
-
-    .search-box button i {
-        font-size: 12px;
-    }
-
-    .brand1 {
-        margin: 10px 10px;
-    }
-
-    .brand1 img {
-        margin: 3px 5px;
-    }
-
-    .brand1 .ad0, .brand1 .ad2 {
-        width: 45px;
-    }
-
-    .brand1 .ad1, .brand1 .ad3, .brand1 .ad5, .brand1 .ad6 {
-        width: 75px;
-    }
-
-    .brand1 .ad4, .brand1 .ad7 {
-        width: 65px;
-    }
-
-    .hero {
-        margin: 15px 10px 30px;
-    }
-
-    .hero h1 {
-        font-size: 18px;
-    }
-
-    .hero span {
-        font-size: 22px;
-    }
-
-    .carousel-container {
-        margin: 25px auto;
-    }
-
-    .item {
-        min-width: 90px;
-    }
-
-    .item img {
-        width: 85px;
-        height: 60px;
-    }
-
-    .item p {
-        font-size: 9px;
-        margin-top: 5px;
-    }
-
-    .carousel-container button {
-        font-size: 14px;
-        padding: 3px 6px;
-    }
-
-    .prev {
-        left: 2px;
-    }
-
-    .next {
-        right: 2px;
-    }
 }
